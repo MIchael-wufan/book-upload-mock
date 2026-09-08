@@ -67,8 +67,7 @@ function renderThumbnails() {
 }
 function setEditMode(value){editMode=value;$('#editHint').classList.toggle('hidden',!value);$('#toggleEdit').textContent=value?'退出编辑':'编辑图片';if(currentBook)renderThumbnails();}
 function openViewer(){const page=currentBook.pages[currentImageIndex];if(!page)return;const sideways=Math.abs(page.rotation)%180===90;$('#cropPanel').classList.add('hidden');$('#viewerImage').src=page.src;$('#viewerImage').style.transform=`rotate(${page.rotation}deg) scale(${sideways?'.78':'1'})`;$('#viewerImage').style.clipPath=cropInset(page.crop);$('#viewerPosition').textContent=`${currentImageIndex+1} / ${currentBook.pages.length}`;$('#viewerCaption').textContent=`第 ${currentImageIndex+1} 张答案图片 · ${page.rotation===0?'原始方向':`已旋转 ${page.rotation}°`}${isCropped(page.crop)?' · 已裁切':''}`;$('#viewerModal').classList.remove('hidden');updateViewerButtons();}
-function updateViewerButtons(){const first=currentImageIndex===0,last=currentImageIndex===currentBook.pages.length-1;$('#prevImage').disabled=first;$('#nextImage').disabled=last;$('#movePrev').disabled=first;$('#moveNext').disabled=last;}
-function moveImage(delta){const to=currentImageIndex+delta;if(to<0||to>=currentBook.pages.length)return;const [moved]=currentBook.pages.splice(currentImageIndex,1);currentBook.pages.splice(to,0,moved);currentImageIndex=to;renderThumbnails();openViewer();showToast('图片顺序已调整');}
+function updateViewerButtons(){const first=currentImageIndex===0,last=currentImageIndex===currentBook.pages.length-1;$('#prevImage').disabled=first;$('#nextImage').disabled=last;}
 function rotateImage(delta){const page=currentBook.pages[currentImageIndex];if(!page)return;page.rotation=(page.rotation+delta+360)%360;renderThumbnails();openViewer();showToast(page.rotation===0?'已恢复图片原始方向':`图片已旋转至 ${page.rotation}°`);}
 function syncCropControls(){['Top','Right','Bottom','Left'].forEach(side=>{const key=side.toLowerCase();$('#crop'+side).value=cropDraft[key];$('#crop'+side+'Value').textContent=`${cropDraft[key]}%`;});$('#viewerImage').style.clipPath=cropInset(cropDraft);}
 function openCropPanel(){const page=currentBook.pages[currentImageIndex];if(!page)return;cropDraft={...page.crop};syncCropControls();$('#cropPanel').classList.remove('hidden');}
@@ -88,7 +87,6 @@ $('#saveBookInfo').addEventListener('click',()=>{const name=$('#editBookName').v
 $('#toggleEdit').addEventListener('click',()=>setEditMode(!editMode)); $('#finishEdit').addEventListener('click',()=>setEditMode(false));
 $$('[data-close-modal]').forEach(el=>el.addEventListener('click',()=>$('#viewerModal').classList.add('hidden')));
 $('#prevImage').addEventListener('click',()=>{if(currentImageIndex>0){currentImageIndex--;renderThumbnails();openViewer();}}); $('#nextImage').addEventListener('click',()=>{if(currentImageIndex<currentBook.pages.length-1){currentImageIndex++;renderThumbnails();openViewer();}});
-$('#movePrev').addEventListener('click',()=>moveImage(-1)); $('#moveNext').addEventListener('click',()=>moveImage(1));
 $('#rotateLeft').addEventListener('click',()=>rotateImage(-90)); $('#rotateRight').addEventListener('click',()=>rotateImage(90)); $('#resetRotation').addEventListener('click',()=>{const page=currentBook.pages[currentImageIndex];if(!page||page.rotation===0)return;page.rotation=0;renderThumbnails();openViewer();showToast('已恢复图片原始方向');});
 $('#cropImage').addEventListener('click',openCropPanel);
 ['Top','Right','Bottom','Left'].forEach(side=>$('#crop'+side).addEventListener('input',event=>{cropDraft[side.toLowerCase()]=Number(event.target.value);syncCropControls();}));

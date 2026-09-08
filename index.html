@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mock-图书审核</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="stylesheet" href="./image-editor.css" />
-  <link rel="stylesheet" href="./merc-reference.css" />
+  <link rel="stylesheet" href="./styles.css?v=20260908-2" />
+  <link rel="stylesheet" href="./image-editor.css?v=20260908-2" />
+  <link rel="stylesheet" href="./merc-reference.css?v=20260908-2" />
 </head>
 <body>
   <header class="topbar">
@@ -121,10 +121,10 @@
 
           <div class="answer-panel card">
             <div class="answer-head">
-              <div><h2>答案图片</h2><p>点击缩略图查看原图；拖拽或使用工具按钮调整顺序</p></div>
+              <div><h2>答案图片</h2><p>点击缩略图查看原图；编辑模式下拖拽缩略图调整顺序</p></div>
               <div class="answer-actions"><span>共 <b id="imageCount">16</b> 张</span><button class="btn" id="toggleEdit">编辑图片</button></div>
             </div>
-            <div id="editHint" class="edit-hint hidden"><span>编辑模式</span> 拖拽图片可以排序；选中图片后可前移、后移或删除。<button id="finishEdit">完成编辑</button></div>
+            <div id="editHint" class="edit-hint hidden"><span>编辑模式</span> 拖拽图片可以排序；点击图片可旋转、裁切或删除。<button id="finishEdit">完成编辑</button></div>
             <div id="thumbnailGrid" class="thumbnail-grid"></div>
             <div class="review-note"><label for="reviewRemark">审核备注 <span>（拒绝时必填）</span></label><textarea id="reviewRemark" placeholder="请输入审核备注或拒绝原因"></textarea></div>
             <div class="audit-footer"><div class="autosave" id="autosaveText"><span class="dot"></span> 图片调整自动保存在本次演示中</div><div id="decisionActions"><button class="btn danger" id="rejectBook">拒绝</button><button class="btn success" id="passBook">通过审核</button></div></div>
@@ -141,7 +141,7 @@
       <div class="viewer-canvas"><img id="viewerImage" alt="答案原图" /></div>
       <div class="viewer-toolbar" id="viewerToolbar">
         <div class="toolbar-group"><button id="rotateLeft" title="向左旋转 90°">↶ 左转</button><button id="rotateRight" title="向右旋转 90°">↷ 右转</button><button id="resetRotation" title="恢复原始方向">重置方向</button><button id="cropImage" title="裁切当前图片">⌗ 裁切</button></div>
-        <div class="toolbar-group"><button id="movePrev">⇤ 前移</button><button id="deleteImage" class="delete">删除此图</button><button id="moveNext">后移 ⇥</button></div>
+        <div class="toolbar-group"><button id="deleteImage" class="delete">删除此图</button></div>
       </div>
       <div id="cropPanel" class="crop-panel hidden">
         <div class="crop-panel-head"><strong>裁切当前图片</strong><span>拖动滑块设置四边裁切比例</span></div>
@@ -163,6 +163,6 @@
   </div>
 
   <div id="toast" class="toast hidden"><span>✓</span><p>操作成功</p></div>
-  <script src="./app.js"></script>
+  <script src="./app.js?v=20260908-2"></script>
 </body>
 </html>

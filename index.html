@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mock-图书审核</title>
-  <link rel="stylesheet" href="./styles.css?v=20260908-2" />
-  <link rel="stylesheet" href="./image-editor.css?v=20260908-2" />
-  <link rel="stylesheet" href="./merc-reference.css?v=20260908-2" />
+  <link rel="stylesheet" href="./styles.css?v=20260908-3" />
+  <link rel="stylesheet" href="./image-editor.css?v=20260908-3" />
+  <link rel="stylesheet" href="./merc-reference.css?v=20260908-3" />
 </head>
 <body>
   <header class="topbar">
@@ -110,10 +110,8 @@
             <div id="bookInfoEditor" class="book-info-editor hidden">
               <label><span>图书名称</span><input id="editBookName" /></label>
               <label><span>册次</span><input id="editBookSubtitle" /></label>
-              <label><span>ISBN</span><input id="editBookIsbn" /></label>
               <label><span>年级</span><select id="editBookGrade"><option>三年级</option><option>四年级</option><option>五年级</option><option>六年级</option><option>七年级</option><option>八年级</option><option>九年级</option></select></label>
               <label><span>学科</span><select id="editBookCourse"><option>语文</option><option>数学</option><option>英语</option><option>物理</option><option>历史</option></select></label>
-              <label><span>地区</span><select id="editBookProvince"><option>浙江省</option><option>江苏省</option><option>广东省</option><option>四川省</option><option>山东省</option></select></label>
               <div class="book-editor-actions"><button class="btn" id="cancelBookInfo">取消</button><button class="btn primary" id="saveBookInfo">保存</button></div>
             </div>
             <div class="ai-result" id="aiResultBox"><div><span class="ai-badge">AI</span><strong id="aiResultTitle">AI 审核已通过</strong></div><p id="aiResultText">整体判断结果为 0.92，进入人工审核。</p></div>
@@ -163,6 +161,6 @@
   </div>
 
   <div id="toast" class="toast hidden"><span>✓</span><p>操作成功</p></div>
-  <script src="./app.js?v=20260908-2"></script>
+  <script src="./app.js?v=20260908-3"></script>
 </body>
 </html>

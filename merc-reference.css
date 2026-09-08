@@ -58,7 +58,8 @@ body { min-width: 1180px; background: var(--merc-bg); color: var(--merc-text); }
 .table-wrap td { height: 104px; padding: 12px; border-bottom: 1px solid #eceef0; color: #2f3942; }
 .book-cell { min-width: 285px; }
 .book-cell-content { min-width: 0; }
-.book-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+.book-tag-rows { display: grid; gap: 5px; margin-top: 7px; }
+.book-tags { display: flex; flex-wrap: nowrap; gap: 5px; }
 .book-tags span { display: inline-flex; align-items: center; height: 20px; padding: 0 7px; border: 1px solid #d7e8f7; background: #f1f7fc; color: #4f7899; font-size: 11px; line-height: 18px; white-space: nowrap; }
 .cover { width: 50px; height: 68px; border-radius: 0; box-shadow: none; }
 .book-name { font-weight: 600; color: #27323c; }

@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mock-图书审核</title>
-  <link rel="stylesheet" href="./styles.css?v=20260908-5" />
-  <link rel="stylesheet" href="./image-editor.css?v=20260908-5" />
-  <link rel="stylesheet" href="./merc-reference.css?v=20260908-5" />
+  <link rel="stylesheet" href="./styles.css?v=20260908-6" />
+  <link rel="stylesheet" href="./image-editor.css?v=20260908-6" />
+  <link rel="stylesheet" href="./merc-reference.css?v=20260908-6" />
 </head>
 <body>
   <header class="topbar">
@@ -116,7 +116,6 @@
               <label><span>学科</span><select id="editBookCourse"><option>语文</option><option>数学</option><option>英语</option><option>物理</option><option>历史</option></select></label>
               <div class="book-editor-actions"><button class="btn" id="cancelBookInfo">取消</button><button class="btn primary" id="saveBookInfo">保存</button></div>
             </div>
-            <div class="ai-result" id="aiResultBox"><div><span class="ai-badge">AI</span><strong id="aiResultTitle">AI 审核已通过</strong></div><p id="aiResultText">整体判断结果为 0.92，进入人工审核。</p></div>
           </aside>
 
           <div class="answer-panel card">
@@ -126,7 +125,6 @@
             </div>
             <div id="editHint" class="edit-hint hidden"><span>编辑模式</span> 拖拽图片可以排序；点击图片可旋转、裁切或删除。<button id="finishEdit">完成编辑</button></div>
             <div id="thumbnailGrid" class="thumbnail-grid"></div>
-            <div class="review-note"><label for="reviewRemark">审核备注 <span>（拒绝时必填）</span></label><textarea id="reviewRemark" placeholder="请输入审核备注或拒绝原因"></textarea></div>
             <div class="audit-footer"><div class="autosave" id="autosaveText"><span class="dot"></span> 图片调整自动保存在本次演示中</div></div>
           </div>
         </div>
@@ -159,10 +157,10 @@
 
   <div id="confirmModal" class="modal hidden" role="dialog" aria-modal="true">
     <div class="modal-backdrop"></div>
-    <div class="confirm-box"><div id="confirmIcon" class="confirm-icon">✓</div><h3 id="confirmTitle">确认通过审核？</h3><p id="confirmText">通过后将把上传者名称记录为图书上传者。</p><div><button class="btn" id="cancelConfirm">取消</button><button class="btn success" id="submitConfirm">确认通过</button></div></div>
+    <div class="confirm-box"><div id="confirmIcon" class="confirm-icon">✓</div><h3 id="confirmTitle">确认通过审核？</h3><p id="confirmText">通过后将把上传者名称记录为图书上传者。</p><div id="rejectRemarkField" class="confirm-remark hidden"><label for="rejectRemark">审核备注 <span>（必填）</span></label><textarea id="rejectRemark" placeholder="请输入拒绝原因"></textarea></div><div><button class="btn" id="cancelConfirm">取消</button><button class="btn success" id="submitConfirm">确认通过</button></div></div>
   </div>
 
   <div id="toast" class="toast hidden"><span>✓</span><p>操作成功</p></div>
-  <script src="./app.js?v=20260908-5"></script>
+  <script src="./app.js?v=20260908-6"></script>
 </body>
 </html>

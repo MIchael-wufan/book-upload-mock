@@ -29,8 +29,8 @@ const isCropped = crop => Object.values(crop).some(value => value > 0);
 function renderRows() {
   $('#bookRows').innerHTML = filteredBooks.map(book => `<tr>
     <td><code>${book.id}</code></td>
-    <td><div class="book-cell"><img class="cover" src="${book.cover}" alt=""><div><div class="book-name">${book.name}</div><div class="book-sub">${book.subtitle}</div></div></div></td>
-    <td>${book.isbn}</td><td>${book.grade}<div class="book-sub">${book.course}</div></td><td>${book.province}</td>
+    <td><div class="book-cell"><img class="cover" src="${book.cover}" alt=""><div class="book-cell-content"><div class="book-name">${book.name}</div><div class="book-sub">${book.subtitle}</div><div class="book-tags"><span>${book.grade}</span><span>${book.course}</span><span>${book.province}</span></div></div></div></td>
+    <td>${book.isbn}</td>
     <td><div class="uploader"><strong>${book.uploader}</strong><span>ID：${book.userId}</span></div></td>
     <td>${book.time.replace(' ','<br>')}</td><td><span class="status ${statusClass[book.status]}">${book.status}</span></td>
     <td class="remark-cell">${book.remark || '—'}</td>

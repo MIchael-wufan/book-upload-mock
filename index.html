@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mock-图书审核</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./image-editor.css" />
+  <link rel="stylesheet" href="./merc-reference.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">M</span><span>Mock 图书审核</span></div>
+    <nav class="topnav" aria-label="主导航">
+      <a href="#">试卷平台</a><a href="#">题目生产平台</a><a href="#">练习题库</a>
+      <a href="#">知识体系</a><a class="active" href="#">在线抄写</a><a href="#">人工问答</a>
+    </nav>
+    <div class="account"><span class="avatar">吴</span><span>182****4390</span><span class="chevron">⌄</span></div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="sidebar-title">在线抄写</div>
+      <nav aria-label="功能导航">
+        <a href="#"><span class="menu-icon">▦</span>图书列表</a>
+        <a href="#"><span class="menu-icon">▤</span>块列表</a>
+        <a href="#"><span class="menu-icon">▧</span>素材列表</a>
+        <a href="#"><span class="menu-icon">⌁</span>抄写配置</a>
+        <a href="#"><span class="menu-icon">✓</span>单题标签列表</a>
+        <a href="#"><span class="menu-icon">▣</span>图书反馈</a>
+        <a class="active" href="#"><span class="menu-icon">◉</span>用户上传图书审核</a>
+        <a href="#"><span class="menu-icon">▥</span>试卷反馈</a>
+      </nav>
+      <div class="sidebar-foot">
+        <span class="pulse"></span> 演示环境
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="page-heading">
+        <div>
+          <div class="breadcrumb">Mock / 图书审核</div>
+          <h1>mock-图书审核</h1>
+        </div>
+        <div class="environment">MOCK · DEMO</div>
+      </div>
+
+      <section id="listView" class="view active" aria-label="用户上传图书审核列表">
+        <div class="filter-card card">
+          <div class="card-header">
+            <div><h2>审核任务查询</h2><p>查询 C 端用户上传、待内容侧审核的图书</p></div>
+            <button class="text-button" id="collapseFilters">收起条件 <span>⌃</span></button>
+          </div>
+          <form id="filterForm" class="filters">
+            <label><span>审核任务 ID：</span><input id="filterId" placeholder="请输入审核任务 ID" /></label>
+            <label><span>图书名称：</span><input id="filterName" placeholder="请输入图书名称" /></label>
+            <label><span>ISBN：</span><input id="filterIsbn" placeholder="请输入 ISBN" /></label>
+            <label><span>上传者 ID：</span><input id="filterUserId" placeholder="请输入上传者 ID" /></label>
+            <label><span>上传者名称：</span><input id="filterUploader" placeholder="请输入上传者名称" /></label>
+            <label><span>审核状态：</span><select id="filterStatus"><option value="">全部状态</option><option>AI审核未通过</option><option>待人工审核</option><option>人工审核未通过</option><option>审核通过</option></select></label>
+            <label><span>年级：</span><select id="filterGrade"><option value="">全部年级</option><option>三年级</option><option>四年级</option><option>五年级</option><option>六年级</option><option>七年级</option><option>八年级</option><option>九年级</option></select></label>
+            <label><span>学科：</span><select id="filterCourse"><option value="">全部学科</option><option>语文</option><option>数学</option><option>英语</option><option>物理</option><option>历史</option></select></label>
+            <label><span>地区：</span><select id="filterProvince"><option value="">全部地区</option><option>浙江省</option><option>江苏省</option><option>广东省</option><option>四川省</option><option>山东省</option></select></label>
+            <label><span>上传时间：</span><div class="date-range"><input type="date" /><i>—</i><input type="date" /></div></label>
+            <div class="filter-actions"><button class="btn primary" type="submit">查询</button><button class="btn" id="resetFilters" type="button">重置</button></div>
+          </form>
+        </div>
+
+        <div class="summary-row">
+          <div class="summary-card"><span class="summary-icon red">AI</span><div><small>AI审核未通过</small><strong id="summaryAiRejected">3</strong></div></div>
+          <div class="summary-card"><span class="summary-icon blue">◷</span><div><small>待人工审核</small><strong id="summaryPending">2</strong></div></div>
+        </div>
+
+        <div class="table-card card">
+          <div class="card-header table-head">
+            <div><h2>用户上传图书</h2><p>共 <strong id="resultCount">8</strong> 条审核任务</p></div>
+            <div class="table-tools"><button class="icon-button" title="刷新" id="refreshTable">↻</button><button class="icon-button" title="列设置">⚙</button></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>审核任务 ID</th><th>图书信息</th><th>ISBN</th><th>年级 / 学科</th><th>地区</th><th>上传者</th><th>答案图片</th><th>上传时间</th><th>审核状态</th><th>备注</th><th>操作</th></tr></thead>
+              <tbody id="bookRows"></tbody>
+            </table>
+          </div>
+          <div class="pagination"><span>共 <b id="paginationCount">8</b> 条</span><button disabled>‹</button><button class="active">1</button><button>2</button><button>›</button><select><option>10 条/页</option><option>20 条/页</option></select></div>
+        </div>
+      </section>
+
+      <section id="detailView" class="view" aria-label="图书审核详情">
+        <div class="detail-top">
+          <button class="back-button" id="backToList">← 返回审核列表</button>
+          <div class="detail-title"><h2 id="detailTitle">图书审核</h2><span id="detailStatus" class="status pending">待人工审核</span></div>
+          <div class="detail-meta">审核任务 <code id="detailId">-</code></div>
+        </div>
+
+        <div class="review-layout">
+          <aside class="book-panel card">
+            <div class="panel-kicker">图书信息</div>
+            <img id="detailCover" class="detail-cover" alt="图书封面" />
+            <h3 id="detailBookName">-</h3>
+            <dl class="book-info">
+              <div><dt>ISBN</dt><dd id="detailIsbn">-</dd></div>
+              <div><dt>年级</dt><dd id="detailGrade">-</dd></div>
+              <div><dt>学科</dt><dd id="detailCourse">-</dd></div>
+              <div><dt>地区</dt><dd id="detailProvince">-</dd></div>
+              <div><dt>上传者 ID</dt><dd id="detailUserId">-</dd></div>
+              <div><dt>上传者名称</dt><dd id="detailUploader">-</dd></div>
+              <div><dt>上传时间</dt><dd id="detailTime">-</dd></div>
+            </dl>
+            <div class="ai-result" id="aiResultBox"><div><span class="ai-badge">AI</span><strong id="aiResultTitle">AI 审核已通过</strong></div><p id="aiResultText">整体判断结果为 0.92，进入人工审核。</p></div>
+          </aside>
+
+          <div class="answer-panel card">
+            <div class="answer-head">
+              <div><h2>答案图片</h2><p>点击缩略图查看原图；拖拽或使用工具按钮调整顺序</p></div>
+              <div class="answer-actions"><span>共 <b id="imageCount">16</b> 张</span><button class="btn" id="toggleEdit">编辑图片</button></div>
+            </div>
+            <div id="editHint" class="edit-hint hidden"><span>编辑模式</span> 拖拽图片可以排序；选中图片后可前移、后移或删除。<button id="finishEdit">完成编辑</button></div>
+            <div id="thumbnailGrid" class="thumbnail-grid"></div>
+            <div class="review-note"><label for="reviewRemark">审核备注 <span>（拒绝时必填）</span></label><textarea id="reviewRemark" placeholder="请输入审核备注或拒绝原因"></textarea></div>
+            <div class="audit-footer"><div class="autosave" id="autosaveText"><span class="dot"></span> 图片调整自动保存在本次演示中</div><div id="decisionActions"><button class="btn danger" id="rejectBook">拒绝</button><button class="btn success" id="passBook">通过审核</button></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="viewerModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="答案原图预览">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="viewer">
+      <div class="viewer-head"><div><strong id="viewerTitle">答案原图</strong><span id="viewerPosition">1 / 16</span></div><button class="close-button" data-close-modal aria-label="关闭">×</button></div>
+      <div class="viewer-canvas"><img id="viewerImage" alt="答案原图" /></div>
+      <div class="viewer-toolbar" id="viewerToolbar">
+        <div class="toolbar-group"><button id="rotateLeft" title="向左旋转 90°">↶ 左转</button><button id="rotateRight" title="向右旋转 90°">↷ 右转</button><button id="resetRotation" title="恢复原始方向">重置方向</button></div>
+        <div class="toolbar-group"><button id="movePrev">⇤ 前移</button><button id="deleteImage" class="delete">删除此图</button><button id="moveNext">后移 ⇥</button></div>
+      </div>
+      <div class="viewer-navigation"><button id="prevImage">← 上一张</button><span id="viewerCaption">第 1 张答案图片</span><button id="nextImage">下一张 →</button></div>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop"></div>
+    <div class="confirm-box"><div id="confirmIcon" class="confirm-icon">✓</div><h3 id="confirmTitle">确认通过审核？</h3><p id="confirmText">通过后将把上传者名称记录为图书上传者。</p><div><button class="btn" id="cancelConfirm">取消</button><button class="btn success" id="submitConfirm">确认通过</button></div></div>
+  </div>
+
+  <div id="toast" class="toast hidden"><span>✓</span><p>操作成功</p></div>
+  <script src="./app.js"></script>
+</body>
+</html>

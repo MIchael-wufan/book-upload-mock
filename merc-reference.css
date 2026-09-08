@@ -1,0 +1,86 @@
+/* Merc 旧后台视觉：对齐图书反馈页面的全宽、扁平、双栏布局。 */
+:root {
+  --merc-navy: #061c2c;
+  --merc-blue: #1890ff;
+  --merc-bg: #f1f3f6;
+  --merc-border: #e5e7eb;
+  --merc-text: #202b36;
+  --merc-muted: #8b949e;
+}
+
+body { min-width: 1180px; background: var(--merc-bg); color: var(--merc-text); }
+.topbar { height: 54px; padding: 0 32px; background: var(--merc-navy); box-shadow: none; }
+.brand, .avatar { display: none; }
+.topnav { margin-left: 0; gap: 0; }
+.topnav a { height: 54px; padding: 17px 28px 15px; color: #aab8c4; font-size: 13px; }
+.topnav a:hover, .topnav a.active { background: transparent; color: #fff; border-color: var(--merc-blue); }
+.account { font-size: 12px; color: #c3cdd5; }
+
+.sidebar { display: none; }
+.main { margin-left: 0; width: 100%; padding: 0 32px 40px; }
+.page-heading { height: 60px; margin: 0 -32px; padding: 0 20px; background: #fff; border-bottom: 1px solid #eceff2; }
+.page-heading h1 { font-size: 16px; font-weight: 600; }
+.breadcrumb, .environment { display: none; }
+#listView { padding-top: 20px; }
+
+.card { border: 0; border-radius: 0; box-shadow: none; }
+.filter-card { min-height: 284px; }
+.filter-card .card-header { display: none; }
+.filters {
+  display: grid;
+  grid-template-columns: minmax(420px, 1fr) minmax(420px, 1fr);
+  column-gap: 120px;
+  row-gap: 20px;
+  padding: 22px 52px 24px;
+}
+.filters label { display: grid; grid-template-columns: 112px minmax(260px, 1fr); align-items: center; min-width: 0; }
+.filters label > span { margin: 0; padding-right: 10px; color: #252f38; font-size: 12px; text-align: right; white-space: nowrap; }
+.filters input, .filters select { height: 30px; border-color: #d9dde1; border-radius: 0; color: #3b4650; }
+.filters input::placeholder { color: #b4bac0; }
+.filters input:focus, .filters select:focus, .review-note textarea:focus { box-shadow: none; border-color: #66b7f4; }
+.date-range { height: 30px; border-color: #d9dde1; border-radius: 0; }
+.date-range input { height: 28px; }
+.filter-actions { grid-column: 1 / -1; margin-left: 112px; gap: 12px; }
+.btn { height: 30px; padding: 0 16px; border-radius: 0; font-size: 12px; }
+.btn.primary { min-width: 54px; background: var(--merc-blue); }
+
+.summary-row { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 16px; margin: 20px 0; }
+.summary-card { height: 70px; padding: 0 22px; border: 0; border-radius: 0; box-shadow: none; }
+.summary-icon { width: 36px; height: 36px; border-radius: 3px; }
+.summary-card small { color: #6f7881; font-size: 12px; }
+.summary-card strong { font-size: 19px; line-height: 22px; }
+
+.table-card { border: 0; border-radius: 0; overflow: visible; box-shadow: none; }
+.table-card .card-header { display: none; }
+.table-wrap { padding: 20px 20px 0; overflow-x: auto; }
+.table-wrap table { min-width: 1460px; }
+.table-wrap th { height: 44px; padding: 0 12px; background: #fafafa; border-bottom: 1px solid var(--merc-border); color: #313c46; font-weight: 600; }
+.table-wrap td { height: 104px; padding: 12px; border-bottom: 1px solid #eceef0; color: #2f3942; }
+.book-cell { min-width: 205px; }
+.cover { width: 50px; height: 68px; border-radius: 0; box-shadow: none; }
+.book-name { font-weight: 600; color: #27323c; }
+.status { height: 22px; border-radius: 2px; padding: 0 8px; }
+.action-link { padding: 4px 0; }
+.pagination { height: 56px; padding: 0 20px; border-top: 0; }
+.pagination button, .pagination select { border-radius: 0; }
+
+/* 详情页沿用同一套 Merc 旧后台层级与边框。 */
+#detailView { padding-top: 20px; }
+.detail-top { height: 58px; margin-bottom: 16px; border: 0; border-radius: 0; background: #fff; }
+.review-layout { grid-template-columns: 286px minmax(0, 1fr); gap: 16px; }
+.book-panel, .answer-panel { border-radius: 0; border: 0; box-shadow: none; }
+.book-panel { top: 70px; }
+.answer-head { height: 62px; }
+.thumbnail-grid { grid-template-columns: repeat(8, minmax(76px, 1fr)); }
+.thumb, .review-note textarea { border-radius: 0; }
+.viewer, .confirm-box { border-radius: 0; }
+
+@media (max-width: 1280px) {
+  body { min-width: 1024px; }
+  .main { padding-left: 24px; padding-right: 24px; }
+  .page-heading { margin-left: -24px; margin-right: -24px; }
+  .filters { column-gap: 50px; padding-left: 28px; padding-right: 28px; }
+  .filters label { grid-template-columns: 100px minmax(220px, 1fr); }
+  .filter-actions { margin-left: 100px; }
+  .thumbnail-grid { grid-template-columns: repeat(6, minmax(76px, 1fr)); }
+}

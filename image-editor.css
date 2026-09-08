@@ -8,27 +8,59 @@
 }
 
 .viewer-canvas img {
+  max-height: calc(88vh - 190px);
   transition: transform 0.25s ease;
 }
+
+.viewer-canvas { position: relative; overflow: hidden; }
+
+.crop-overlay {
+  position: absolute;
+  z-index: 3;
+  border: 2px solid #fff;
+  outline: 1px solid #168be8;
+  box-shadow: 0 0 0 9999px rgba(3, 15, 24, 0.58);
+  cursor: move;
+  touch-action: none;
+}
+
+.crop-guide { position: absolute; pointer-events: none; background: rgba(255,255,255,.62); }
+.crop-guide.vertical { top: 0; bottom: 0; width: 1px; }
+.crop-guide.horizontal { left: 0; right: 0; height: 1px; }
+.crop-guide.vertical.one, .crop-guide.horizontal.one { left: 33.333%; top: 33.333%; }
+.crop-guide.vertical.two, .crop-guide.horizontal.two { left: 66.666%; top: 66.666%; }
+.crop-guide.vertical.one, .crop-guide.vertical.two { top: 0; }
+.crop-guide.horizontal.one, .crop-guide.horizontal.two { left: 0; }
+
+.crop-handle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 2px solid #168be8;
+  background: #fff;
+  border-radius: 50%;
+}
+.crop-handle.nw { left: -9px; top: -9px; cursor: nwse-resize; }
+.crop-handle.ne { right: -9px; top: -9px; cursor: nesw-resize; }
+.crop-handle.sw { left: -9px; bottom: -9px; cursor: nesw-resize; }
+.crop-handle.se { right: -9px; bottom: -9px; cursor: nwse-resize; }
+.crop-dimensions { position: absolute; left: 8px; bottom: 8px; padding: 2px 6px; background: rgba(3,15,24,.72); color: #fff; font-size: 11px; line-height: 18px; }
 
 .crop-panel {
   position: absolute;
   right: 18px;
-  top: 104px;
+  top: 110px;
   z-index: 4;
-  width: 330px;
+  width: 270px;
   padding: 14px;
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid #d8dee4;
   box-shadow: 0 7px 24px rgba(25, 45, 62, 0.18);
 }
 
-.crop-panel-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.crop-panel-head { display: grid; gap: 3px; }
 .crop-panel-head span { color: #8b96a0; font-size: 11px; }
-.crop-controls { display: grid; gap: 8px; }
-.crop-controls label { display: grid; grid-template-columns: 18px 1fr 34px; align-items: center; gap: 8px; color: #566573; font-size: 12px; }
-.crop-controls input { width: 100%; accent-color: #168be8; }
-.crop-controls output { color: #168be8; text-align: right; font-size: 11px; }
 .crop-actions { display: flex; justify-content: flex-end; gap: 7px; margin-top: 13px; padding-top: 10px; border-top: 1px solid #edf0f3; }
 
 .viewer-toolbar {

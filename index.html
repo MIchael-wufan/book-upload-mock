@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mock-图书审核</title>
-  <link rel="stylesheet" href="./styles.css?v=20260908-3" />
-  <link rel="stylesheet" href="./image-editor.css?v=20260908-3" />
-  <link rel="stylesheet" href="./merc-reference.css?v=20260908-3" />
+  <link rel="stylesheet" href="./styles.css?v=20260908-4" />
+  <link rel="stylesheet" href="./image-editor.css?v=20260908-4" />
+  <link rel="stylesheet" href="./merc-reference.css?v=20260908-4" />
 </head>
 <body>
   <header class="topbar">
@@ -91,6 +91,7 @@
           <button class="back-button" id="backToList">← 返回审核列表</button>
           <div class="detail-title"><h2 id="detailTitle">图书审核</h2><span id="detailStatus" class="status pending">待人工审核</span></div>
           <div class="detail-meta">审核任务 <code id="detailId">-</code></div>
+          <div class="detail-decisions" id="decisionActions"><button class="btn danger" id="rejectBook">拒绝</button><button class="btn success" id="passBook">通过审核</button></div>
         </div>
 
         <div class="review-layout">
@@ -125,7 +126,7 @@
             <div id="editHint" class="edit-hint hidden"><span>编辑模式</span> 拖拽图片可以排序；点击图片可旋转、裁切或删除。<button id="finishEdit">完成编辑</button></div>
             <div id="thumbnailGrid" class="thumbnail-grid"></div>
             <div class="review-note"><label for="reviewRemark">审核备注 <span>（拒绝时必填）</span></label><textarea id="reviewRemark" placeholder="请输入审核备注或拒绝原因"></textarea></div>
-            <div class="audit-footer"><div class="autosave" id="autosaveText"><span class="dot"></span> 图片调整自动保存在本次演示中</div><div id="decisionActions"><button class="btn danger" id="rejectBook">拒绝</button><button class="btn success" id="passBook">通过审核</button></div></div>
+            <div class="audit-footer"><div class="autosave" id="autosaveText"><span class="dot"></span> 图片调整自动保存在本次演示中</div></div>
           </div>
         </div>
       </section>
@@ -161,6 +162,6 @@
   </div>
 
   <div id="toast" class="toast hidden"><span>✓</span><p>操作成功</p></div>
-  <script src="./app.js?v=20260908-3"></script>
+  <script src="./app.js?v=20260908-4"></script>
 </body>
 </html>

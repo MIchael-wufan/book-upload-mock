@@ -69,6 +69,9 @@ body { min-width: 1180px; background: var(--merc-bg); color: var(--merc-text); }
 /* 详情页沿用同一套 Merc 旧后台层级与边框。 */
 #detailView { padding-top: 20px; }
 .detail-top { height: 58px; margin-bottom: 16px; border: 0; border-radius: 0; background: #fff; }
+.detail-meta { margin-left: auto; }
+.detail-decisions { display: flex; gap: 10px; margin-left: 18px; }
+.detail-decisions .btn { min-width: 92px; }
 .review-layout { grid-template-columns: 286px minmax(0, 1fr); gap: 16px; }
 .book-panel, .answer-panel { border-radius: 0; border: 0; box-shadow: none; }
 .book-panel { top: 70px; }
@@ -82,7 +85,7 @@ body { min-width: 1180px; background: var(--merc-bg); color: var(--merc-text); }
 .book-info-editor input:focus, .book-info-editor select:focus { border-color: #66b7f4; }
 .book-editor-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 3px; }
 .answer-head { height: 62px; }
-.thumbnail-grid { grid-template-columns: repeat(8, minmax(76px, 1fr)); }
+.thumbnail-grid { grid-template-columns: repeat(5, minmax(110px, 1fr)); gap: 14px; }
 .thumb, .review-note textarea { border-radius: 0; }
 .thumb-cropped { position: absolute; right: 4px; bottom: 4px; padding: 1px 4px; background: rgba(24,144,255,.88); color: #fff; font-size: 9px; }
 .viewer, .confirm-box { border-radius: 0; }
@@ -94,5 +97,5 @@ body { min-width: 1180px; background: var(--merc-bg); color: var(--merc-text); }
   .filters { column-gap: 50px; padding-left: 28px; padding-right: 28px; }
   .filters label { grid-template-columns: 100px minmax(220px, 1fr); }
   .filter-actions { margin-left: 100px; }
-  .thumbnail-grid { grid-template-columns: repeat(6, minmax(76px, 1fr)); }
+  .thumbnail-grid { grid-template-columns: repeat(5, minmax(90px, 1fr)); }
 }

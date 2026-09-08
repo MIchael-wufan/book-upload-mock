@@ -11,14 +11,14 @@ function answerPage(index, hue = 211) {
 }
 
 const books = [
-  {id:'UGC2609070018',name:'名校课堂同步练习册',subtitle:'八年级下册',isbn:'9787575424851',grade:'八年级',course:'历史',province:'浙江省',userId:'256039654',uploader:'林溪同学',time:'2026-09-07 20:02',status:'AI审核未通过',remark:'检测到违规内容',aiResult:'单图审核输出 1',hue:12,images:16},
-  {id:'UGC2609070017',name:'阳光同学课时优化作业',subtitle:'四年级上册',isbn:'9787107416453',grade:'四年级',course:'语文',province:'江苏省',userId:'1063843067',uploader:'星星妈妈',time:'2026-09-07 19:46',status:'待人工审核',remark:'',aiResult:'整体判断结果 0.92',hue:38,images:18},
-  {id:'UGC2609070016',name:'实验班提优训练',subtitle:'九年级全一册',isbn:'9787577433312',grade:'九年级',course:'物理',province:'广东省',userId:'832760142',uploader:'陈知远',time:'2026-09-07 18:21',status:'AI审核未通过',remark:'上传图片非答案内容',aiResult:'单图审核输出 2',hue:148,images:16},
-  {id:'UGC2609070015',name:'计算能手每日一练',subtitle:'五年级上册',isbn:'9787568892018',grade:'五年级',course:'数学',province:'四川省',userId:'505120083',uploader:'小麦同学',time:'2026-09-07 17:35',status:'审核通过',remark:'',aiResult:'整体判断结果 0.95',newBookId:'5048584',hue:205,images:22},
-  {id:'UGC2609070014',name:'新概念英语同步测试',subtitle:'七年级上册',isbn:'9787544988278',grade:'七年级',course:'英语',province:'山东省',userId:'781044592',uploader:'Summer',time:'2026-09-07 16:08',status:'人工审核未通过',remark:'答案图片缺少第 12 页，请补充后重新上传',aiResult:'整体判断结果 0.88',hue:258,images:11},
-  {id:'UGC2609070013',name:'课堂作业本',subtitle:'六年级上册',isbn:'9787553694719',grade:'六年级',course:'数学',province:'浙江省',userId:'610552741',uploader:'一叶知秋',time:'2026-09-07 15:42',status:'待人工审核',remark:'',aiResult:'整体判断结果 0.91',hue:325,images:16},
-  {id:'UGC2609070012',name:'语文知识集锦',subtitle:'三年级上册',isbn:'9787544560900',grade:'三年级',course:'语文',province:'江苏省',userId:'391527004',uploader:'橙子爸爸',time:'2026-09-07 14:33',status:'审核通过',remark:'',aiResult:'整体判断结果 0.93',newBookId:'5048612',hue:50,images:20},
-  {id:'UGC2609070011',name:'培优新帮手',subtitle:'八年级上册',isbn:'9787535182722',grade:'八年级',course:'数学',province:'广东省',userId:'294771038',uploader:'晚风',time:'2026-09-07 13:17',status:'AI审核未通过',remark:'答案不完整',aiResult:'整体判断结果 0.73',hue:187,images:16}
+  {id:'UGC2609070018',name:'名校课堂同步练习册',subtitle:'下册',isbn:'9787575424851',grade:'八年级',course:'历史',province:'浙江省',userId:'256039654',uploader:'林溪同学',time:'2026-09-07 20:02',status:'AI审核未通过',remark:'检测到违规内容',aiResult:'单图审核输出 1',hue:12,images:16},
+  {id:'UGC2609070017',name:'阳光同学课时优化作业',subtitle:'上册',isbn:'9787107416453',grade:'四年级',course:'语文',province:'江苏省',userId:'1063843067',uploader:'星星妈妈',time:'2026-09-07 19:46',status:'待人工审核',remark:'',aiResult:'整体判断结果 0.92',hue:38,images:18},
+  {id:'UGC2609070016',name:'实验班提优训练',subtitle:'全册',isbn:'9787577433312',grade:'九年级',course:'物理',province:'广东省',userId:'832760142',uploader:'陈知远',time:'2026-09-07 18:21',status:'AI审核未通过',remark:'上传图片非答案内容',aiResult:'单图审核输出 2',hue:148,images:16},
+  {id:'UGC2609070015',name:'计算能手每日一练',subtitle:'上册',isbn:'9787568892018',grade:'五年级',course:'数学',province:'四川省',userId:'505120083',uploader:'小麦同学',time:'2026-09-07 17:35',status:'审核通过',remark:'',aiResult:'整体判断结果 0.95',newBookId:'5048584',hue:205,images:22},
+  {id:'UGC2609070014',name:'新概念英语同步测试',subtitle:'上册',isbn:'9787544988278',grade:'七年级',course:'英语',province:'山东省',userId:'781044592',uploader:'Summer',time:'2026-09-07 16:08',status:'人工审核未通过',remark:'答案图片缺少第 12 页，请补充后重新上传',aiResult:'整体判断结果 0.88',hue:258,images:11},
+  {id:'UGC2609070013',name:'课堂作业本',subtitle:'上册',isbn:'9787553694719',grade:'六年级',course:'数学',province:'浙江省',userId:'610552741',uploader:'一叶知秋',time:'2026-09-07 15:42',status:'待人工审核',remark:'',aiResult:'整体判断结果 0.91',hue:325,images:16},
+  {id:'UGC2609070012',name:'语文知识集锦',subtitle:'上册',isbn:'9787544560900',grade:'三年级',course:'语文',province:'江苏省',userId:'391527004',uploader:'橙子爸爸',time:'2026-09-07 14:33',status:'审核通过',remark:'',aiResult:'整体判断结果 0.93',newBookId:'5048612',hue:50,images:20},
+  {id:'UGC2609070011',name:'培优新帮手',subtitle:'上册',isbn:'9787535182722',grade:'八年级',course:'数学',province:'广东省',userId:'294771038',uploader:'晚风',time:'2026-09-07 13:17',status:'AI审核未通过',remark:'答案不完整',aiResult:'整体判断结果 0.73',hue:187,images:16}
 ];
 books.forEach((b, i) => { b.cover = bookCover(b.name.slice(0, 6), `${b.grade} · ${b.course}`, b.hue); b.pages = Array.from({length:b.images}, (_, j) => ({id:`${b.id}-${j+1}`,src:answerPage(j+1,b.hue),rotation:0,crop:{top:0,right:0,bottom:0,left:0}})); });
 let filteredBooks = [...books]; let currentBook = null; let currentImageIndex = 0; let editMode = false; let pendingDecision = null; let draggedIndex = null; let cropDraft = null;
@@ -47,7 +47,7 @@ function openDetail(id) {
   currentBook=books.find(b=>b.id===id); if(!currentBook)return; currentImageIndex=0; editMode=false;
   $('#listView').classList.remove('active'); $('#detailView').classList.add('active'); window.scrollTo(0,0);
   $('#detailTitle').textContent=currentBook.name; $('#detailId').textContent=currentBook.id; $('#detailCover').src=currentBook.cover; $('#detailBookName').textContent=`${currentBook.name} · ${currentBook.subtitle}`;
-  ['Isbn','Grade','Course','Province','UserId','Uploader','Time'].forEach(k=>$('#detail'+k).textContent=currentBook[k.charAt(0).toLowerCase()+k.slice(1)]);
+  ['Isbn','Subtitle','Grade','Course','Province','UserId','Uploader','Time'].forEach(k=>$('#detail'+k).textContent=currentBook[k.charAt(0).toLowerCase()+k.slice(1)]);
   const st=$('#detailStatus'); st.textContent=currentBook.status; st.className=`status ${statusClass[currentBook.status]}`;
   const reviewable=currentBook.status==='待人工审核'; const aiRejected=currentBook.status==='AI审核未通过';
   $('#aiResultBox').classList.toggle('failed',aiRejected); $('#aiResultTitle').textContent=aiRejected?'AI 审核未通过':'AI 审核已通过'; $('#aiResultText').textContent=aiRejected?`${currentBook.aiResult}；${currentBook.remark}`:`${currentBook.aiResult}，已进入人工审核流程。`;
@@ -72,7 +72,7 @@ function rotateImage(delta){const page=currentBook.pages[currentImageIndex];if(!
 function syncCropControls(){['Top','Right','Bottom','Left'].forEach(side=>{const key=side.toLowerCase();$('#crop'+side).value=cropDraft[key];$('#crop'+side+'Value').textContent=`${cropDraft[key]}%`;});$('#viewerImage').style.clipPath=cropInset(cropDraft);}
 function openCropPanel(){const page=currentBook.pages[currentImageIndex];if(!page)return;cropDraft={...page.crop};syncCropControls();$('#cropPanel').classList.remove('hidden');}
 function fillBookEditor(){$('#editBookName').value=currentBook.name;$('#editBookSubtitle').value=currentBook.subtitle;$('#editBookGrade').value=currentBook.grade;$('#editBookCourse').value=currentBook.course;}
-function refreshBookDetails(){currentBook.cover=bookCover(currentBook.name.slice(0,6),`${currentBook.grade} · ${currentBook.course}`,currentBook.hue);$('#detailTitle').textContent=currentBook.name;$('#detailCover').src=currentBook.cover;$('#detailBookName').textContent=`${currentBook.name} · ${currentBook.subtitle}`;['Isbn','Grade','Course','Province'].forEach(k=>$('#detail'+k).textContent=currentBook[k.charAt(0).toLowerCase()+k.slice(1)]);}
+function refreshBookDetails(){currentBook.cover=bookCover(currentBook.name.slice(0,6),`${currentBook.grade} · ${currentBook.course}`,currentBook.hue);$('#detailTitle').textContent=currentBook.name;$('#detailCover').src=currentBook.cover;$('#detailBookName').textContent=`${currentBook.name} · ${currentBook.subtitle}`;['Isbn','Subtitle','Grade','Course','Province'].forEach(k=>$('#detail'+k).textContent=currentBook[k.charAt(0).toLowerCase()+k.slice(1)]);}
 function showToast(message){$('#toast p').textContent=message;$('#toast').classList.remove('hidden');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>$('#toast').classList.add('hidden'),2200);}
 function showConfirm(type){pendingDecision=type;const pass=type==='pass';$('#confirmIcon').textContent=pass?'✓':'×';$('#confirmIcon').className=`confirm-icon ${pass?'':'reject'}`;$('#confirmTitle').textContent=pass?'确认通过审核？':'确认拒绝该图书？';$('#confirmText').textContent=pass?`通过后将把“${currentBook.uploader}”记录为图书上传者。`:'拒绝后将同步状态给 C 端，请确认审核备注已填写。';$('#submitConfirm').textContent=pass?'确认通过':'确认拒绝';$('#submitConfirm').className=`btn ${pass?'success':'danger'}`;$('#confirmModal').classList.remove('hidden');}
 

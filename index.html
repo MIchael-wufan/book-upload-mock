@@ -95,10 +95,10 @@
 
         <div class="review-layout">
           <aside class="book-panel card">
-            <div class="panel-kicker">图书信息</div>
+            <div class="panel-kicker-row"><div class="panel-kicker">图书信息</div><button class="panel-edit-button" id="editBookInfo">编辑</button></div>
             <img id="detailCover" class="detail-cover" alt="图书封面" />
             <h3 id="detailBookName">-</h3>
-            <dl class="book-info">
+            <dl class="book-info" id="bookInfoDisplay">
               <div><dt>ISBN</dt><dd id="detailIsbn">-</dd></div>
               <div><dt>年级</dt><dd id="detailGrade">-</dd></div>
               <div><dt>学科</dt><dd id="detailCourse">-</dd></div>
@@ -107,6 +107,15 @@
               <div><dt>上传者名称</dt><dd id="detailUploader">-</dd></div>
               <div><dt>上传时间</dt><dd id="detailTime">-</dd></div>
             </dl>
+            <div id="bookInfoEditor" class="book-info-editor hidden">
+              <label><span>图书名称</span><input id="editBookName" /></label>
+              <label><span>册次</span><input id="editBookSubtitle" /></label>
+              <label><span>ISBN</span><input id="editBookIsbn" /></label>
+              <label><span>年级</span><select id="editBookGrade"><option>三年级</option><option>四年级</option><option>五年级</option><option>六年级</option><option>七年级</option><option>八年级</option><option>九年级</option></select></label>
+              <label><span>学科</span><select id="editBookCourse"><option>语文</option><option>数学</option><option>英语</option><option>物理</option><option>历史</option></select></label>
+              <label><span>地区</span><select id="editBookProvince"><option>浙江省</option><option>江苏省</option><option>广东省</option><option>四川省</option><option>山东省</option></select></label>
+              <div class="book-editor-actions"><button class="btn" id="cancelBookInfo">取消</button><button class="btn primary" id="saveBookInfo">保存</button></div>
+            </div>
             <div class="ai-result" id="aiResultBox"><div><span class="ai-badge">AI</span><strong id="aiResultTitle">AI 审核已通过</strong></div><p id="aiResultText">整体判断结果为 0.92，进入人工审核。</p></div>
           </aside>
 
@@ -131,8 +140,18 @@
       <div class="viewer-head"><div><strong id="viewerTitle">答案原图</strong><span id="viewerPosition">1 / 16</span></div><button class="close-button" data-close-modal aria-label="关闭">×</button></div>
       <div class="viewer-canvas"><img id="viewerImage" alt="答案原图" /></div>
       <div class="viewer-toolbar" id="viewerToolbar">
-        <div class="toolbar-group"><button id="rotateLeft" title="向左旋转 90°">↶ 左转</button><button id="rotateRight" title="向右旋转 90°">↷ 右转</button><button id="resetRotation" title="恢复原始方向">重置方向</button></div>
+        <div class="toolbar-group"><button id="rotateLeft" title="向左旋转 90°">↶ 左转</button><button id="rotateRight" title="向右旋转 90°">↷ 右转</button><button id="resetRotation" title="恢复原始方向">重置方向</button><button id="cropImage" title="裁切当前图片">⌗ 裁切</button></div>
         <div class="toolbar-group"><button id="movePrev">⇤ 前移</button><button id="deleteImage" class="delete">删除此图</button><button id="moveNext">后移 ⇥</button></div>
+      </div>
+      <div id="cropPanel" class="crop-panel hidden">
+        <div class="crop-panel-head"><strong>裁切当前图片</strong><span>拖动滑块设置四边裁切比例</span></div>
+        <div class="crop-controls">
+          <label>上 <input type="range" id="cropTop" min="0" max="30" value="0"><output id="cropTopValue">0%</output></label>
+          <label>右 <input type="range" id="cropRight" min="0" max="30" value="0"><output id="cropRightValue">0%</output></label>
+          <label>下 <input type="range" id="cropBottom" min="0" max="30" value="0"><output id="cropBottomValue">0%</output></label>
+          <label>左 <input type="range" id="cropLeft" min="0" max="30" value="0"><output id="cropLeftValue">0%</output></label>
+        </div>
+        <div class="crop-actions"><button class="btn" id="resetCrop">重置裁切</button><button class="btn" id="cancelCrop">取消</button><button class="btn primary" id="applyCrop">应用裁切</button></div>
       </div>
       <div class="viewer-navigation"><button id="prevImage">← 上一张</button><span id="viewerCaption">第 1 张答案图片</span><button id="nextImage">下一张 →</button></div>
     </div>

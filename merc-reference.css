@@ -72,9 +72,19 @@ body { min-width: 1180px; background: var(--merc-bg); color: var(--merc-text); }
 .review-layout { grid-template-columns: 286px minmax(0, 1fr); gap: 16px; }
 .book-panel, .answer-panel { border-radius: 0; border: 0; box-shadow: none; }
 .book-panel { top: 70px; }
+.panel-kicker-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.panel-kicker-row .panel-kicker { margin-bottom: 0; }
+.panel-edit-button { border: 0; background: transparent; color: var(--merc-blue); padding: 2px 0; font-size: 12px; }
+.book-info-editor { margin-top: 12px; padding-top: 12px; border-top: 1px solid #edf0f3; }
+.book-info-editor label { display: block; margin-bottom: 9px; }
+.book-info-editor label span { display: block; margin-bottom: 4px; color: #7c8791; font-size: 11px; }
+.book-info-editor input, .book-info-editor select { width: 100%; height: 30px; padding: 0 8px; border: 1px solid #d9dde1; border-radius: 0; background: #fff; color: #344353; outline: none; }
+.book-info-editor input:focus, .book-info-editor select:focus { border-color: #66b7f4; }
+.book-editor-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 3px; }
 .answer-head { height: 62px; }
 .thumbnail-grid { grid-template-columns: repeat(8, minmax(76px, 1fr)); }
 .thumb, .review-note textarea { border-radius: 0; }
+.thumb-cropped { position: absolute; right: 4px; bottom: 4px; padding: 1px 4px; background: rgba(24,144,255,.88); color: #fff; font-size: 9px; }
 .viewer, .confirm-box { border-radius: 0; }
 
 @media (max-width: 1280px) {

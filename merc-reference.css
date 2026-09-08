@@ -53,7 +53,7 @@ body { min-width: 1180px; background: var(--merc-bg); color: var(--merc-text); }
 .table-card { border: 0; border-radius: 0; overflow: visible; box-shadow: none; }
 .table-card .card-header { display: none; }
 .table-wrap { padding: 20px 20px 0; overflow-x: auto; }
-.table-wrap table { min-width: 1460px; }
+.table-wrap table { min-width: 1360px; }
 .table-wrap th { height: 44px; padding: 0 12px; background: #fafafa; border-bottom: 1px solid var(--merc-border); color: #313c46; font-weight: 600; }
 .table-wrap td { height: 104px; padding: 12px; border-bottom: 1px solid #eceef0; color: #2f3942; }
 .book-cell { min-width: 205px; }
@@ -61,6 +61,8 @@ body { min-width: 1180px; background: var(--merc-bg); color: var(--merc-text); }
 .book-name { font-weight: 600; color: #27323c; }
 .status { height: 22px; border-radius: 2px; padding: 0 8px; }
 .action-link { padding: 4px 0; }
+.new-book-link { color: var(--merc-blue); text-decoration: none; }
+.new-book-link:hover { text-decoration: underline; }
 .pagination { height: 56px; padding: 0 20px; border-top: 0; }
 .pagination button, .pagination select { border-radius: 0; }
 

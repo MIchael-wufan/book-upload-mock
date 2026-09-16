@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>mock-图书审核</title>
-  <link rel="stylesheet" href="./styles.css?v=20260910-12" />
-  <link rel="stylesheet" href="./image-editor.css?v=20260910-12" />
-  <link rel="stylesheet" href="./merc-reference.css?v=20260910-12" />
+  <link rel="stylesheet" href="./styles.css?v=20260916-13" />
+  <link rel="stylesheet" href="./image-editor.css?v=20260916-13" />
+  <link rel="stylesheet" href="./merc-reference.css?v=20260916-13" />
 </head>
 <body>
   <header class="topbar">
@@ -122,10 +122,10 @@
 
           <div class="answer-panel card">
             <div class="answer-head">
-              <div><h2>答案图片</h2><p>点击缩略图可直接查看和编辑；调整顺序需进入排序模式</p></div>
-              <div class="answer-actions"><span>共 <b id="imageCount">16</b> 张</span><button class="btn" id="toggleEdit">编辑图片顺序</button></div>
+              <div><h2>答案图片</h2><p>进入编辑后，可调整图片顺序并编辑单张图片</p></div>
+              <div class="answer-actions"><span>共 <b id="imageCount">16</b> 张</span><button class="btn" id="toggleEdit">编辑图片</button></div>
             </div>
-            <div id="editHint" class="edit-hint hidden"><span>图片排序模式</span> 拖拽缩略图调整顺序，单图编辑无需进入此模式。<div class="edit-hint-actions"><button id="resetOrder">重置顺序</button><button id="finishEdit">完成排序</button></div></div>
+            <div id="editHint" class="edit-hint hidden"><span>图片编辑中</span> 可拖拽缩略图调整顺序；点击缩略图可旋转、裁切或删除该图片。<div class="edit-hint-actions"><button id="resetOrder">重置顺序</button><button id="cancelEdit">取消编辑</button><button class="primary-text" id="finishEdit">完成编辑</button></div></div>
             <div id="thumbnailGrid" class="thumbnail-grid"></div>
             <div class="audit-footer"><div class="autosave" id="autosaveText"><span class="dot"></span> 图片调整自动保存在本次演示中</div></div>
           </div>
@@ -157,6 +157,6 @@
   </div>
 
   <div id="toast" class="toast hidden"><span>✓</span><p>操作成功</p></div>
-  <script src="./app.js?v=20260910-12"></script>
+  <script src="./app.js?v=20260916-13"></script>
 </body>
 </html>
